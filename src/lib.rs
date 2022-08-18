@@ -51,6 +51,14 @@ pub fn kb_event() {
                     footer.focus().unwrap()
                 }
             }
+            "Enter" => {
+                let focused_element = document.active_element().unwrap().dyn_into::<web_sys::HtmlElement>().unwrap();
+                focused_element.click();
+            }
+            "NumpadEnter" => {
+                let focused_element = document.active_element().unwrap().dyn_into::<web_sys::HtmlElement>().unwrap();
+                focused_element.click();
+            }
             _ => (),
         }
     });
